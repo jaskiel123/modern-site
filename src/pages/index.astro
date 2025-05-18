@@ -3,7 +3,6 @@ import '../styles/global.css';
 import HeroSection from '../components/HeroSection.astro';
 import { FeaturesSection } from '../components/FeaturesSection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
-import { PricingSection } from '../components/PricingSection';
 import { FAQSection } from '../components/FAQSection';
 import { AuditFormSection } from '../components/AuditFormSection';
 import Footer from '../components/Footer.astro';
@@ -24,6 +23,7 @@ import Footer from '../components/Footer.astro';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <title>AutoAI Systems - Automatyzacja procesów AI</title>
+  <script async src="https://tally.so/widgets/embed.js"></script>
   <script>
     // Check for prefers-reduced-motion and add a class to the HTML element
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -41,14 +41,8 @@ import Footer from '../components/Footer.astro';
   <nav class="absolute top-0 left-0 right-0 z-50 py-4">
     <div class="container mx-auto px-4 flex justify-between items-center">
       <a href="#" class="text-2xl font-bold text-white">AutoAI Systems</a>
-      <div class="hidden md:flex items-center space-x-8">
-        <a href="#features" class="text-white/90 hover:text-white">Funkcje</a>
-        <a href="#pricing" class="text-white/90 hover:text-white">Cennik</a>
-        <a href="#testimonials" class="text-white/90 hover:text-white">Opinie</a>
-        <a href="#faq" class="text-white/90 hover:text-white">FAQ</a>
-      </div>
       <a href="#audit" class="px-5 py-2 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 rounded-lg border border-white/30 font-medium text-sm transition-all">
-        Rozpocznij audyt
+        Audyt w 60 sekund
       </a>
     </div>
   </nav>
@@ -67,8 +61,43 @@ import Footer from '../components/Footer.astro';
       <TestimonialsSection client:visible />
     </section>
     
-    <!-- Pricing Section -->
-    <PricingSection client:visible />
+    <!-- How It Works Section -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <h2 class="text-[clamp(2rem,3vw+1rem,2.5rem)] font-bold text-primary dark:text-primary-300 mb-12 text-center">Jak to działa — 3 proste kroki</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <div class="bg-white rounded-xl shadow-elevation-2 p-8 text-center border border-neutral-100 dark:border-neutral-700 dark:bg-neutral-800">
+            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold">1</div>
+            <h3 class="text-xl font-semibold mb-4 text-neutral-800 dark:text-white">60-sek. ankieta</h3>
+            <p class="text-neutral-600 dark:text-neutral-300">Odpowiadasz na kilka pytań o firmie i procesach.</p>
+          </div>
+          
+          <div class="bg-white rounded-xl shadow-elevation-2 p-8 text-center border border-neutral-100 dark:border-neutral-700 dark:bg-neutral-800">
+            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold">2</div>
+            <h3 class="text-xl font-semibold mb-4 text-neutral-800 dark:text-white">Widełki & ROI w 2 h</h3>
+            <p class="text-neutral-600 dark:text-neutral-300">Dostajesz estymację oszczędności i inwestycji.</p>
+          </div>
+          
+          <div class="bg-white rounded-xl shadow-elevation-2 p-8 text-center border border-neutral-100 dark:border-neutral-700 dark:bg-neutral-800">
+            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold">3</div>
+            <h3 class="text-xl font-semibold mb-4 text-neutral-800 dark:text-white">30-min discovery call</h3>
+            <p class="text-neutral-600 dark:text-neutral-300">Ustalamy detale, a automatyzacja startuje ≤ 14 dni.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Example Effect Section -->
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2 class="text-[clamp(2rem,3vw+1rem,2.5rem)] font-bold text-primary dark:text-primary-300 mb-8 text-center">Przykład efektu</h2>
+        <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-elevation-2 p-8 border border-neutral-100 dark:border-neutral-700 dark:bg-neutral-800 text-center">
+          <p class="text-[clamp(1.2rem,1.5vw+1rem,1.75rem)] text-neutral-800 dark:text-white">
+            „Marek – automatyzacja 2 procesów → <span class="text-primary font-semibold">–11 h/tydz</span>, <span class="text-primary font-semibold">+73 800 zł rocznie</span>".
+          </p>
+        </div>
+      </div>
+    </section>
     
     <!-- FAQ Section -->
     <FAQSection client:visible />
