@@ -17,3 +17,30 @@ main {
 h1 {
   color: #3478F6;
 }
+
+/* Support for prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Styling for the feature cards */
+.feature-card {
+  border-radius: 0.5rem;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.feature-card:hover:not(.reduce-motion *) {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional safety class for reduced motion */
+.reduce-motion * {
+  transition: none !important;
+  animation: none !important;
+}

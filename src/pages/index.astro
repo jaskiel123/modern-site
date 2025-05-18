@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { FeaturesSection } from '../components/FeaturesSection';
 ---
 
 <!DOCTYPE html>
@@ -11,6 +12,12 @@ import '../styles/global.css';
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <title>AutoAI Systems</title>
+  <script>
+    // Check for prefers-reduced-motion and add a class to the HTML element
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('reduce-motion');
+    }
+  </script>
 </head>
 <body class="bg-light-gray text-dark-gray">
   <div class="bg-primary-blue text-white p-4 text-center">
@@ -20,15 +27,8 @@ import '../styles/global.css';
     <h1 class="text-4xl font-bold text-primary-blue mb-4">AutoAI Systems</h1>
     <p class="mb-8">The full landing page is coming soon!</p>
     
-    <div class="bg-white p-6 rounded shadow-md">
-      <h2 class="text-2xl text-secondary-blue mb-4">Features</h2>
-      <ul class="list-disc pl-5 space-y-2">
-        <li>Built with Astro</li>
-        <li>Styled with Tailwind CSS</li>
-        <li>Optimized for performance</li>
-        <li>Modern design with accessibility in mind</li>
-      </ul>
-    </div>
+    <!-- React component with Framer Motion animations -->
+    <FeaturesSection client:visible />
   </main>
 </body>
 </html>
