@@ -2,6 +2,11 @@
 import '../styles/global.css';
 import HeroSection from '../components/HeroSection.astro';
 import { FeaturesSection } from '../components/FeaturesSection';
+import { TestimonialsSection } from '../components/TestimonialsSection';
+import { PricingSection } from '../components/PricingSection';
+import { FAQSection } from '../components/FAQSection';
+import { AuditFormSection } from '../components/AuditFormSection';
+import Footer from '../components/Footer.astro';
 ---
 
 <!DOCTYPE html>
@@ -10,6 +15,11 @@ import { FeaturesSection } from '../components/FeaturesSection';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Odzyskaj 10-20 godzin tygodniowo dzięki Agentom AI. Automatyzacja zadań, faktur i przenoszenia danych.">
+  <meta property="og:title" content="AutoAI Systems - Automatyzacja procesów AI">
+  <meta property="og:description" content="Odzyskaj 10-20 godzin tygodniowo dzięki Agentom AI. Automatyzacja zadań, faktur i przenoszenia danych.">
+  <meta property="og:image" content="/images/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -31,6 +41,12 @@ import { FeaturesSection } from '../components/FeaturesSection';
   <nav class="absolute top-0 left-0 right-0 z-50 py-4">
     <div class="container mx-auto px-4 flex justify-between items-center">
       <a href="#" class="text-2xl font-bold text-white">AutoAI Systems</a>
+      <div class="hidden md:flex items-center space-x-8">
+        <a href="#features" class="text-white/90 hover:text-white">Funkcje</a>
+        <a href="#pricing" class="text-white/90 hover:text-white">Cennik</a>
+        <a href="#testimonials" class="text-white/90 hover:text-white">Opinie</a>
+        <a href="#faq" class="text-white/90 hover:text-white">FAQ</a>
+      </div>
       <a href="#audit" class="px-5 py-2 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 rounded-lg border border-white/30 font-medium text-sm transition-all">
         Rozpocznij audyt
       </a>
@@ -42,21 +58,57 @@ import { FeaturesSection } from '../components/FeaturesSection';
     <HeroSection />
     
     <!-- Features Section with Framer Motion animations -->
-    <div class="py-24 bg-white dark:bg-neutral-900">
-      <div class="container mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-16 text-primary dark:text-primary-300">
-          Dlaczego warto wybrać AutoAI?
-        </h2>
-        <FeaturesSection client:visible />
-      </div>
-    </div>
+    <section id="features" class="py-24 bg-white dark:bg-neutral-900">
+      <FeaturesSection client:visible />
+    </section>
+    
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+      <TestimonialsSection client:visible />
+    </section>
+    
+    <!-- Pricing Section -->
+    <PricingSection client:visible />
+    
+    <!-- FAQ Section -->
+    <FAQSection client:visible />
+    
+    <!-- Audit Form Section -->
+    <AuditFormSection client:visible />
   </main>
   
-  <!-- Footer placeholder -->
-  <footer class="bg-neutral-900 text-white py-12">
-    <div class="container mx-auto px-4 text-center">
-      <p>© 2025 AutoAI Systems LLC. Wszelkie prawa zastrzeżone.</p>
-    </div>
-  </footer>
+  <!-- Footer -->
+  <Footer />
+  
+  <!-- Scroll to top button -->
+  <button 
+    id="scrollTop" 
+    class="fixed bottom-8 right-8 p-2 rounded-full bg-primary text-white shadow-lg opacity-0 transition-opacity duration-300 z-50"
+    aria-label="Scroll to top"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+    </svg>
+  </button>
+
+  <script>
+    // Scroll to top functionality
+    const scrollTopButton = document.getElementById('scrollTop');
+    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 500) {
+        scrollTopButton.classList.add('opacity-100');
+      } else {
+        scrollTopButton.classList.remove('opacity-100');
+      }
+    });
+    
+    scrollTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
 </body>
 </html>

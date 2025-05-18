@@ -62,24 +62,38 @@
   @apply backdrop-blur-md bg-neutral-900/80 border border-neutral-700/30 rounded-xl shadow-lg;
 }
 
+.glass-card {
+  @apply backdrop-blur-sm bg-white/90 dark:bg-neutral-800/90 border border-neutral-100/80 dark:border-neutral-700/80 rounded-xl shadow-elevation-2;
+}
+
+/* Noise background */
+.bg-noise {
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=');
+  background-repeat: repeat;
+}
+
 /* Advanced button styles */
 .btn-primary {
   @apply px-6 py-3 bg-primary hover:bg-primary-600 text-white font-semibold rounded-lg transition-all duration-200 shadow-lg shadow-primary/20 hover:-translate-y-0.5;
 }
 
 .btn-secondary {
-  @apply px-6 py-3 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 border border-white/30 rounded-lg font-medium transition-all duration-200;
+  @apply px-6 py-3 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 border border-white/30 rounded-lg font-medium transition-all duration-200 hover:-translate-y-0.5;
+}
+
+.btn-outline {
+  @apply px-6 py-3 bg-transparent hover:bg-neutral-100 dark:hover:bg-neutral-800 text-primary dark:text-primary-300 border border-primary dark:border-primary-300 rounded-lg font-medium transition-all duration-200 hover:-translate-y-0.5;
 }
 
 /* Styling for the feature cards */
 .feature-card {
   border-radius: 0.75rem;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .feature-card:hover:not(.reduce-motion *) {
   transform: translateY(-5px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 /* Additional safety class for reduced motion */
@@ -101,6 +115,39 @@
   @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
 }
 
+/* Fluid typography utilities */
+.text-fluid-xs {
+  font-size: clamp(0.75rem, 0.2vw + 0.7rem, 0.875rem);
+}
+
+.text-fluid-sm {
+  font-size: clamp(0.875rem, 0.3vw + 0.8rem, 1rem);
+}
+
+.text-fluid-base {
+  font-size: clamp(0.95rem, 0.5vw + 0.85rem, 1.1rem);
+}
+
+.text-fluid-lg {
+  font-size: clamp(1.1rem, 0.75vw + 0.9rem, 1.3rem);
+}
+
+.text-fluid-xl {
+  font-size: clamp(1.25rem, 1vw + 1rem, 1.5rem);
+}
+
+.text-fluid-2xl {
+  font-size: clamp(1.5rem, 1.5vw + 1.2rem, 2rem);
+}
+
+.text-fluid-3xl {
+  font-size: clamp(2rem, 3vw + 1rem, 2.5rem);
+}
+
+.text-fluid-4xl {
+  font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
+}
+
 /* Variable border radius utility */
 .rounded-xl-2xl {
   border-radius: 0.75rem 1rem 0.75rem 1rem;
@@ -114,4 +161,23 @@
 /* Enhanced focus styles for accessibility */
 a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   @apply outline-none ring-2 ring-secondary ring-offset-2 ring-offset-white dark:ring-offset-neutral-900;
+}
+
+/* Section styling */
+.section-with-blur {
+  @apply relative overflow-hidden;
+}
+
+.section-with-blur::before {
+  content: "";
+  @apply absolute inset-0 bg-noise opacity-[0.02] z-0;
+}
+
+/* Blur shapes for decorative backgrounds */
+.blur-shape-1 {
+  @apply absolute w-96 h-96 rounded-full bg-primary-100/30 dark:bg-primary-800/10 blur-3xl -z-10;
+}
+
+.blur-shape-2 {
+  @apply absolute w-80 h-80 rounded-full bg-secondary-200/30 dark:bg-secondary-800/10 blur-3xl -z-10;
 }
