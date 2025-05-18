@@ -1,17 +1,19 @@
 ---
 import '../styles/global.css';
+import HeroSection from '../components/HeroSection.astro';
 import { FeaturesSection } from '../components/FeaturesSection';
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Odzyskaj 10-20 godzin tygodniowo dzięki Agentom AI. Automatyzacja zadań, faktur i przenoszenia danych.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <title>AutoAI Systems</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>AutoAI Systems - Automatyzacja procesów AI</title>
   <script>
     // Check for prefers-reduced-motion and add a class to the HTML element
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
@@ -19,16 +21,42 @@ import { FeaturesSection } from '../components/FeaturesSection';
     }
   </script>
 </head>
-<body class="bg-light-gray text-dark-gray">
-  <div class="bg-primary-blue text-white p-4 text-center">
-    <p class="text-sm">Minimal test version</p>
-  </div>
-  <main class="max-w-4xl mx-auto p-8">
-    <h1 class="text-4xl font-bold text-primary-blue mb-4">AutoAI Systems</h1>
-    <p class="mb-8">The full landing page is coming soon!</p>
+<body class="bg-neutral-50 text-neutral-800 dark:bg-neutral-950 dark:text-neutral-100 font-inter">
+  <!-- Skip to content link for accessibility -->
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-white focus:text-primary-700">
+    Przejdź do treści
+  </a>
+  
+  <!-- Navbar (transparent for hero overlay) -->
+  <nav class="absolute top-0 left-0 right-0 z-50 py-4">
+    <div class="container mx-auto px-4 flex justify-between items-center">
+      <a href="#" class="text-2xl font-bold text-white">AutoAI Systems</a>
+      <a href="#audit" class="px-5 py-2 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 rounded-lg border border-white/30 font-medium text-sm transition-all">
+        Rozpocznij audyt
+      </a>
+    </div>
+  </nav>
+  
+  <main id="main-content">
+    <!-- Modern Hero Section with AVIF background and glassmorphism -->
+    <HeroSection />
     
-    <!-- React component with Framer Motion animations -->
-    <FeaturesSection client:visible />
+    <!-- Features Section with Framer Motion animations -->
+    <div class="py-24 bg-white dark:bg-neutral-900">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-16 text-primary dark:text-primary-300">
+          Dlaczego warto wybrać AutoAI?
+        </h2>
+        <FeaturesSection client:visible />
+      </div>
+    </div>
   </main>
+  
+  <!-- Footer placeholder -->
+  <footer class="bg-neutral-900 text-white py-12">
+    <div class="container mx-auto px-4 text-center">
+      <p>© 2025 AutoAI Systems LLC. Wszelkie prawa zastrzeżone.</p>
+    </div>
+  </footer>
 </body>
 </html>

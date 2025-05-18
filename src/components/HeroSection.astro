@@ -1,0 +1,153 @@
+---
+import { Image } from 'astro:assets';
+---
+
+<section class="relative min-h-[90vh] overflow-hidden flex items-center py-20">
+  <!-- AVIF Background with overlay -->
+  <div class="absolute inset-0 z-0">
+    <picture>
+      <source srcset="/images/hero-bg.avif" type="image/avif" />
+      <source srcset="/images/hero-bg.webp" type="image/webp" />
+      <img 
+        src="/images/hero-bg.jpg" 
+        alt="" 
+        class="w-full h-full object-cover object-center"
+        aria-hidden="true"
+        loading="eager"
+      />
+    </picture>
+    <!-- Gradient overlay -->
+    <div class="absolute inset-0 bg-gradient-to-br from-primary/90 via-primary-700/80 to-neutral-900/90 mix-blend-multiply"></div>
+    <!-- Mesh gradient accent -->
+    <div class="absolute bottom-0 left-0 w-full h-2/3 bg-gradient-to-t from-primary-900/30 to-transparent"></div>
+    <!-- Noise texture overlay -->
+    <div class="absolute inset-0 bg-noise opacity-5"></div>
+  </div>
+
+  <!-- Floating shapes -->
+  <div aria-hidden="true" class="absolute top-1/4 left-10 w-48 h-48 rounded-full bg-secondary/30 blur-3xl"></div>
+  <div aria-hidden="true" class="absolute bottom-1/4 right-10 w-64 h-64 rounded-full bg-primary-300/20 blur-3xl"></div>
+
+  <!-- Content container -->
+  <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <!-- Text content -->
+      <div class="text-white">
+        <div class="inline-flex items-center px-3 py-1 mb-6 text-xs font-medium rounded-full bg-white/10 backdrop-blur-sm text-white border border-white/20">
+          <span class="mr-2">✨</span> Nowa technologia 2025
+        </div>
+        
+        <!-- Fluid typography with clamp() -->
+        <h1 class="font-bold mb-6 leading-tight text-white">
+          <span class="block text-[clamp(2.5rem,5vw+1rem,4.5rem)] mb-2">Odzyskaj</span>
+          <span class="text-[clamp(2rem,4vw+1rem,3.5rem)] text-secondary">10–20 Godzin</span>
+          <span class="block text-[clamp(1.8rem,3vw+1rem,3rem)]">Tygodniowo z&nbsp;AI</span>
+        </h1>
+        
+        <p class="text-[clamp(1rem,1vw+0.5rem,1.25rem)] mb-8 leading-relaxed text-white/90 max-w-xl">
+          Agenci AI usuwają faktury, maile i problem przenoszenia danych z Twojego dnia pracy. 
+          <strong class="text-secondary-300">Dodatkowo automatycznie</strong> sprawiają, że klienci trafiają do Ciebie a nie do konkurencji.
+        </p>
+        
+        <div class="flex flex-wrap gap-4 mb-8">
+          <a 
+            href="#audit" 
+            class="px-8 py-4 bg-white text-primary-900 hover:bg-white/90 rounded-lg font-semibold transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-primary-900/20 text-[clamp(1rem,0.5vw+0.9rem,1.125rem)]"
+          >
+            Rozpocznij 60-sek. Audyt
+          </a>
+          <a 
+            href="#how-it-works" 
+            class="px-8 py-4 bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 border border-white/30 rounded-lg font-medium transition-all duration-200 text-[clamp(1rem,0.5vw+0.9rem,1.125rem)]"
+          >
+            Jak to działa?
+          </a>
+        </div>
+        
+        <div class="inline-flex items-center bg-white/10 backdrop-blur-sm text-white/90 px-4 py-2 rounded-full text-sm font-medium border border-white/20">
+          <span class="flex items-center justify-center w-5 h-5 bg-secondary/30 rounded-full mr-2">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-3 h-3">
+              <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+            </svg>
+          </span>
+          GDPR Compliant · 4 wdrożenia / mc
+        </div>
+      </div>
+      
+      <!-- Glassmorphism card -->
+      <div class="lg:mt-0 mt-6">
+        <div class="relative mx-auto max-w-md">
+          <!-- Decorative elements -->
+          <div aria-hidden="true" class="absolute -top-4 -right-4 w-24 h-24 bg-secondary bg-opacity-20 rounded-lg blur-xl"></div>
+          <div aria-hidden="true" class="absolute -bottom-4 -left-4 w-24 h-24 bg-primary-300 bg-opacity-20 rounded-lg blur-xl"></div>
+          
+          <!-- Glass card -->
+          <div class="backdrop-blur-md bg-white/10 border border-white/20 rounded-2xl overflow-hidden shadow-xl relative z-10">
+            <!-- Card header -->
+            <div class="p-6 border-b border-white/10">
+              <h3 class="text-[clamp(1.25rem,1vw+1rem,1.5rem)] font-semibold text-white">Automatyzacja procesów</h3>
+              <p class="text-white/80 mt-1">Przykładowe rezultaty</p>
+            </div>
+            
+            <!-- Card content -->
+            <div class="p-6 space-y-4">
+              <!-- Result item 1 -->
+              <div class="flex justify-between items-center pb-3 border-b border-white/10">
+                <span class="text-white/90">Odpowiadanie na maile</span>
+                <div class="flex items-center">
+                  <span class="text-secondary-300 font-semibold">-12h</span>
+                  <span class="text-white/60 ml-1 text-sm">/tydz.</span>
+                </div>
+              </div>
+              
+              <!-- Result item 2 -->
+              <div class="flex justify-between items-center pb-3 border-b border-white/10">
+                <span class="text-white/90">Przenoszenie danych</span>
+                <div class="flex items-center">
+                  <span class="text-secondary-300 font-semibold">-15h</span>
+                  <span class="text-white/60 ml-1 text-sm">/tydz.</span>
+                </div>
+              </div>
+              
+              <!-- Result item 3 -->
+              <div class="flex justify-between items-center pb-3 border-b border-white/10">
+                <span class="text-white/90">Obsługa faktur</span>
+                <div class="flex items-center">
+                  <span class="text-secondary-300 font-semibold">-8h</span>
+                  <span class="text-white/60 ml-1 text-sm">/tydz.</span>
+                </div>
+              </div>
+              
+              <!-- Total -->
+              <div class="flex justify-between items-center pt-2">
+                <span class="text-white font-semibold">Suma oszczędności</span>
+                <div class="flex items-center">
+                  <span class="text-secondary font-bold text-xl">35h</span>
+                  <span class="text-white/60 ml-1 text-sm">/tydz.</span>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Card footer -->
+            <div class="p-6 bg-gradient-to-r from-primary-600/30 to-primary-800/30 border-t border-white/10">
+              <div class="flex items-center text-sm text-white/80">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-2 text-secondary-300">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                Średni ROI: 1-3 miesięcy
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  /* Noise texture */
+  .bg-noise {
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJhIiB4PSIwIiB5PSIwIj48ZmVUdXJidWxlbmNlIGJhc2VGcmVxdWVuY3k9Ii43NSIgc3RpdGNoVGlsZXM9InN0aXRjaCIgdHlwZT0iZnJhY3RhbE5vaXNlIi8+PGZlQ29sb3JNYXRyaXggdHlwZT0ic2F0dXJhdGUiIHZhbHVlcz0iMCIvPjwvZmlsdGVyPjxwYXRoIGQ9Ik0wIDBoMzAwdjMwMEgweiIgZmlsdGVyPSJ1cmwoI2EpIiBvcGFjaXR5PSIuMDUiLz48L3N2Zz4=');
+    background-repeat: repeat;
+  }
+</style>
