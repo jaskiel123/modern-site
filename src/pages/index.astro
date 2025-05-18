@@ -5,6 +5,7 @@ import { FeaturesSection } from '../components/FeaturesSection';
 import { TestimonialsSection } from '../components/TestimonialsSection';
 import { FAQSection } from '../components/FAQSection';
 import { AuditFormSection } from '../components/AuditFormSection';
+import { HowItWorksSection } from '../components/HowItWorksSection';
 import Footer from '../components/Footer.astro';
 ---
 
@@ -62,29 +63,8 @@ import Footer from '../components/Footer.astro';
     </section>
     
     <!-- How It Works Section -->
-    <section class="py-16 bg-gray-50">
-      <div class="container mx-auto px-4">
-        <h2 class="text-[clamp(2rem,3vw+1rem,2.5rem)] font-bold text-primary dark:text-primary-300 mb-12 text-center">Jak to działa — 3 proste kroki</h2>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-          <div class="bg-white rounded-xl shadow-elevation-2 p-8 text-center border border-neutral-100 dark:border-neutral-700 dark:bg-neutral-800">
-            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold">1</div>
-            <h3 class="text-xl font-semibold mb-4 text-neutral-800 dark:text-white">60-sek. ankieta</h3>
-            <p class="text-neutral-600 dark:text-neutral-300">Odpowiadasz na kilka pytań o firmie i procesach.</p>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-elevation-2 p-8 text-center border border-neutral-100 dark:border-neutral-700 dark:bg-neutral-800">
-            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold">2</div>
-            <h3 class="text-xl font-semibold mb-4 text-neutral-800 dark:text-white">Widełki & ROI w 2 h</h3>
-            <p class="text-neutral-600 dark:text-neutral-300">Dostajesz estymację oszczędności i inwestycji.</p>
-          </div>
-          
-          <div class="bg-white rounded-xl shadow-elevation-2 p-8 text-center border border-neutral-100 dark:border-neutral-700 dark:bg-neutral-800">
-            <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center mx-auto mb-6 text-xl font-bold">3</div>
-            <h3 class="text-xl font-semibold mb-4 text-neutral-800 dark:text-white">30-min discovery call</h3>
-            <p class="text-neutral-600 dark:text-neutral-300">Ustalamy detale, a automatyzacja startuje ≤ 14 dni.</p>
-          </div>
-        </div>
-      </div>
+    <section id="how-it-works">
+      <HowItWorksSection client:visible />
     </section>
     
     <!-- Example Effect Section -->

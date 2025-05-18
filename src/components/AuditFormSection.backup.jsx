@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { CustomAuditForm } from './CustomAuditForm';
+import React, { useEffect, useState } from 'react';
 
 const AuditFormSection = () => {
-  const [showCustomForm, setShowCustomForm] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   
-  const openCustomForm = () => {
-    setShowCustomForm(true);
+  // Function to open Tally form in a new tab
+  const openTallyForm = () => {
+    window.open('https://tally.so/r/nPgeOV', '_blank');
   };
 
   return (
@@ -26,39 +26,35 @@ const AuditFormSection = () => {
             </p>
           </div>
           
-          {/* Beautiful styled card with button to trigger form */}
-          {showCustomForm ? (
-            <CustomAuditForm onClose={() => setShowCustomForm(false)} />
-          ) : (
-            <div className="backdrop-blur-sm bg-white/90 dark:bg-neutral-800/90 rounded-xl shadow-elevation-2 overflow-hidden border border-neutral-100/80 dark:border-neutral-700/80">
-              <div className="p-10 md:p-16 text-center">
-                <div className="mb-8">
-                  <div className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 dark:bg-primary-300/10 rounded-full mb-6">
-                    <svg className="w-10 h-10 text-primary dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
-                    </svg>
-                  </div>
-                  <h3 className="text-[clamp(1.5rem,1.5vw+1rem,2rem)] font-semibold text-primary-700 dark:text-primary-300 mb-4">
-                    Wypełnij krótki formularz
-                  </h3>
-                  <p className="text-neutral-600 dark:text-neutral-300 max-w-xl mx-auto mb-8">
-                    Poznaj możliwości automatyzacji procesów w swojej firmie i dowiedz się, ile czasu możesz odzyskać dzięki wdrożeniu AI.
-                  </p>
+          {/* Beautiful styled card with button to trigger Tally form */}
+          <div className="backdrop-blur-sm bg-white/90 dark:bg-neutral-800/90 rounded-xl shadow-elevation-2 overflow-hidden border border-neutral-100/80 dark:border-neutral-700/80">
+            <div className="p-10 md:p-16 text-center">
+              <div className="mb-8">
+                <div className="inline-flex items-center justify-center w-20 h-20 bg-primary/10 dark:bg-primary-300/10 rounded-full mb-6">
+                  <svg className="w-10 h-10 text-primary dark:text-primary-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01" />
+                  </svg>
                 </div>
-                
-                <button 
-                  onClick={openCustomForm}
-                  className="px-8 py-4 bg-primary text-white rounded-lg font-semibold transition-all hover:bg-primary-600 hover:-translate-y-0.5 shadow-lg shadow-primary/20 text-[clamp(1rem,0.5vw+0.9rem,1.125rem)]"
-                >
-                  Rozpocznij audyt oszczędności
-                </button>
-                
-                <div className="mt-6 text-center text-sm text-neutral-500 dark:text-neutral-400">
-                  Wypełnienie zajmie tylko 60 sekund. Wyniki otrzymasz w ciągu 2 godzin.
-                </div>
+                <h3 className="text-[clamp(1.5rem,1.5vw+1rem,2rem)] font-semibold text-primary-700 dark:text-primary-300 mb-4">
+                  Wypełnij krótki formularz
+                </h3>
+                <p className="text-neutral-600 dark:text-neutral-300 max-w-xl mx-auto mb-8">
+                  Poznaj możliwości automatyzacji procesów w swojej firmie i dowiedz się, ile czasu możesz odzyskać dzięki wdrożeniu AI.
+                </p>
+              </div>
+              
+              <button 
+                onClick={openTallyForm}
+                className="px-8 py-4 bg-primary text-white rounded-lg font-semibold transition-all hover:bg-primary-600 hover:-translate-y-0.5 shadow-lg shadow-primary/20 text-[clamp(1rem,0.5vw+0.9rem,1.125rem)]"
+              >
+                Rozpocznij audyt oszczędności
+              </button>
+              
+              <div className="mt-6 text-center text-sm text-neutral-500 dark:text-neutral-400">
+                Wypełnienie zajmie tylko 60 sekund. Wyniki otrzymasz w ciągu 2 godzin.
               </div>
             </div>
-          )}
+          </div>
           
           {/* Trust indicators */}
           <div className="mt-10 grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
