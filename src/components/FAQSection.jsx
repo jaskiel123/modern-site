@@ -51,7 +51,7 @@ const FAQSection = () => {
   const faqs = [
     {
       question: "Ile to kosztuje?",
-      answer: "Projekty zaczynają się od 3000 zł. Dokładną wycenę otrzymasz po audycie."
+      answer: "Projekty zaczynają się od 6000 zł. Dokładną wycenę otrzymasz po audycie."
     },
     {
       question: "Czy to bezpieczne?",
