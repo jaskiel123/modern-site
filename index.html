@@ -453,6 +453,22 @@ section.alt { background: var(--bg-elev); border-top: 1px solid var(--border); b
   max-width: 760px;
   margin: 0 auto;
 }
+.who-header {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+.who-avatar {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(16, 185, 129, 0.4);
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.08);
+}
+.who-header-text { flex: 1; min-width: 0; }
 .who-quote {
   margin-top: 24px;
   padding: 20px 24px;
@@ -475,7 +491,6 @@ section.alt { background: var(--bg-elev); border-top: 1px solid var(--border); b
   font-size: 0.88rem;
   color: var(--blue-soft);
   font-weight: 600;
-  margin-bottom: 16px;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -875,8 +890,13 @@ footer {
       <p>Audyt prowadzę osobiście — od pierwszej rozmowy do prezentacji raportu.</p>
     </div>
     <div class="who-card-single">
-      <div class="who-name">Rafał Kielak</div>
-      <div class="who-role">Założyciel AutoAI Systems</div>
+      <div class="who-header">
+        <img src="rafal.jpg" alt="Rafał Kielak" class="who-avatar" width="96" height="96" loading="lazy">
+        <div class="who-header-text">
+          <div class="who-name">Rafał Kielak</div>
+          <div class="who-role">Założyciel AutoAI Systems</div>
+        </div>
+      </div>
       <ul class="who-bullets">
         <li><strong>Ponad 200 wdrożeń AI od 2023 roku</strong> — B2B i B2C, od małych firm po zespoły 50+ osób</li>
       </ul>
