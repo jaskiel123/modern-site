@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dziękuję — zgłoszenie otrzymane | AutoAI Systems</title>
+<meta name="description" content="Twoje zgłoszenie diagnozy leadów dotarło. Odezwę się w ciągu 24h roboczych.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #04060a;
+  --bg-elev: #0a0f18;
+  --bg-card: #0d1420;
+  --border: #1a2434;
+  --text: #f1f5f9;
+  --text-dim: #94a3b8;
+  --text-faint: #64748b;
+  --emerald: #10b981;
+  --emerald-soft: #34d399;
+  --radius: 14px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', -apple-system, system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+h1, h2 {
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+h1 { font-size: clamp(2rem, 4.5vw, 3.2rem); margin-bottom: 16px; }
+h2 { font-size: 1.3rem; margin-bottom: 12px; color: var(--text); }
+p { color: var(--text-dim); font-size: 1.05rem; }
+a { color: var(--emerald-soft); text-decoration: none; }
+a:hover { color: var(--emerald); }
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+  width: 100%;
+}
+.nav {
+  border-bottom: 1px solid var(--border);
+  padding: 18px 0;
+}
+.logo {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.logo-dot {
+  width: 10px;
+  height: 10px;
+  background: var(--emerald);
+  border-radius: 50%;
+  box-shadow: 0 0 12px var(--emerald);
+}
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  padding: 60px 0;
+}
+.check-badge {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.12);
+  border: 1.5px solid var(--emerald);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 28px;
+  font-size: 2rem;
+  color: var(--emerald);
+  font-weight: 700;
+}
+.intro {
+  font-size: 1.15rem;
+  color: var(--text-dim);
+  margin-bottom: 36px;
+  max-width: 560px;
+}
+.steps {
+  display: grid;
+  gap: 16px;
+  margin-bottom: 40px;
+}
+.step {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px 24px;
+  display: grid;
+  grid-template-columns: 36px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+.step-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--emerald);
+  color: var(--bg);
+  font-weight: 700;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.step h2 { margin-bottom: 6px; font-size: 1.05rem; }
+.step p { font-size: 0.97rem; }
+.callout {
+  background: var(--bg-elev);
+  border-left: 3px solid var(--emerald);
+  padding: 16px 22px;
+  border-radius: 6px;
+  margin-bottom: 32px;
+}
+.callout p { font-size: 0.97rem; }
+.cta-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 22px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  transition: border-color 0.2s, transform 0.15s;
+}
+.btn:hover { border-color: var(--emerald); transform: translateY(-1px); color: var(--text); }
+footer {
+  border-top: 1px solid var(--border);
+  padding: 24px 0;
+  text-align: center;
+  color: var(--text-faint);
+  font-size: 0.85rem;
+}
+footer a { color: var(--text-faint); margin: 0 10px; }
+footer a:hover { color: var(--emerald); }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="container">
+    <a href="/agencje" class="logo">
+      <span class="logo-dot"></span>AutoAI Systems
+    </a>
+  </div>
+</nav>
+
+<main>
+  <div class="container">
+    <div class="check-badge">✓</div>
+
+    <h1>Zgłoszenie dotarło.</h1>
+    <p class="intro">Dzięki za wypełnienie formularza. Czytam każde zgłoszenie osobiście i odzywam się w ciągu <strong style="color:var(--text)">24 godzin roboczych</strong> z linkiem do kalendarza.</p>
+
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div>
+          <h2>Mail z linkiem do kalendarza</h2>
+          <p>W ciągu 24h roboczych dostaniesz ode mnie mail (sprawdź też SPAM) z 2-3 wolnymi terminami na 15-min rozmowę. Wybierasz, co Ci pasuje.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div>
+          <h2>Co przygotować na rozmowę (5 min)</h2>
+          <p>Jeśli możesz — miej pod ręką: 1-2 ostatnie zapytania, które wpadły z portalu/strony (screen lub treść), oraz orientacyjny czas między wpadnięciem leada a pierwszą odpowiedzią agenta. To wystarczy, żebym pokazał konkrety, nie ogólniki.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div>
+          <h2>Bez nachalnej sprzedaży</h2>
+          <p>Diagnoza jest bezpłatna. Jeśli po 15 min uznam, że automatyzacja nie ma u Was sensu — powiem to wprost. Jeśli ma — pokażę architekturę i koszt, decyzja po Twojej stronie.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p><strong style="color:var(--text)">Mail nie dociera?</strong> Sprawdź SPAM, a jeśli nie ma — napisz prosto: <a href="mailto:rafal@autoaipl.com">rafal@autoaipl.com</a>. Odpiszę z prywatnej skrzynki.</p>
+    </div>
+
+    <div class="cta-row">
+      <a href="https://www.youtube.com/@autoaipl" target="_blank" rel="noopener" class="btn">→ Zobacz case studies na YouTube</a>
+      <a href="/agencje" class="btn">← Wróć na stronę</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="container">
+    <a href="/agencje/prywatnosc.html">Polityka prywatności</a>
+    <div style="margin-top: 12px;">© 2026 AutoAI Systems LLC</div>
+  </div>
+</footer>
+
+</body>
+</html>
