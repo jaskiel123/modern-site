@@ -2,6 +2,14 @@
 <html lang="pl">
 <head>
 <meta charset="UTF-8">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0CHVNRS01S"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0CHVNRS01S');
+</script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AI Speed-to-Lead dla agencji nieruchomości — AutoAI Systems</title>
 <meta name="description" content="System dla biur nieruchomości 5-50 osób. Odpowiada na leady w 60 sekund, kwalifikuje klienta, przygotowuje brief dla agenta i prowadzi follow-up przez 30 dni. Bez zatrudniania kolejnej osoby.">
@@ -1303,6 +1311,13 @@ footer {
         headers: { 'Accept': 'application/json' }
       });
       if (res.ok) {
+        if (typeof gtag === 'function') {
+          gtag('event', 'form_submit_agencje', {
+            'event_category': 'lead',
+            'event_label': 'agencje_landing',
+            'transport_type': 'beacon'
+          });
+        }
         window.location.href = '/agencje/dziekuje.html';
         return;
       }
